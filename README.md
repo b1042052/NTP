@@ -144,7 +144,7 @@ sudo timedatectl set-timezone [你選擇的時區]
 
 ![image](https://user-images.githubusercontent.com/106873001/172450395-1cd8eb23-d72a-46de-a41f-5c7f218e07b1.png)
 
-接下來只要讓剛才client端連接，client端也會與server端同步時間
+* 接下來只要讓剛才client端連接，client端也會與server端同步時間
 
 ```shell
 sudo ntpdate [server IP]
