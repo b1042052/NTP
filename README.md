@@ -52,11 +52,11 @@ ifconfig
 
 ![螢幕擷取畫面 2022-06-07 220052](https://user-images.githubusercontent.com/106873001/172400327-918a9446-8c4b-42c8-874c-7dc72bb8d1a6.png)
 
-* 輸入剛在ubuntu找到的IP，並點選[立即更新]
+* 輸入剛在ubuntu找到的IP，點選[立即更新]
 
 ![螢幕擷取畫面 2022-06-07 220828](https://user-images.githubusercontent.com/106873001/172402466-d2ea19d2-fede-471d-9f61-8904e2043237.png)
 
-會顯示同步成功，代表著windows連接上ubuntu的網路時間
+顯示同步成功，代表著windows連接上ubuntu的網路時間
 
 ![螢幕擷取畫面 2022-06-07 220921](https://user-images.githubusercontent.com/106873001/172404162-7361ccf4-f60d-4f49-8779-00bb6dd491ed.png)
 
@@ -69,7 +69,8 @@ ifconfig
  ```shell
  sudo nano /etc/ntp.conf
  ```
- - pool組態前面用[#]註解掉，並加上中華電信提供的台灣標準時間的網址(https://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt)，網址五擇一即可
+ - pool組態前面用[#]註解掉，並加上中華電信提供的台灣標準時間的網址，網址五擇一即可 (https://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt)
+ - server 網址 iburst
  
  ![image](https://user-images.githubusercontent.com/106873001/172410136-0d8a56a6-7666-4179-aa77-2f0f73141df1.png)
 
@@ -78,6 +79,49 @@ ifconfig
 ```shell
 sudo service ntp restart    
 ```
+
+* 確認是否連連接成功
+```shell
+sudo ntpd -pn
+```
+
+ [ * ]代表正在使用
+ 
+![螢幕擷取畫面 2022-06-08 012100](https://user-images.githubusercontent.com/106873001/172444480-ee57f946-adf4-4fe1-bae7-c2a6cd26d761.png)
+
+
+
+-以下為建立client端
+
+* 建立另一台虛擬機
+
+* 將網路設定成[橋接介面卡]
+
+* 下載NTPDATE
+
+```shell
+sudo apt-get install ntpdate
+```
+
+* 把client端的時間調亂
+
+  - ubuntu點選右上角有個[設定值]
+  
+![172440055-f4b2e26c-3047-437a-b507-2ada08885b96](https://user-images.githubusercontent.com/106873001/172441249-0fc6ac60-87d0-4ba3-98b1-be7416e1e8e5.png)
+
+
+  - 選擇[日期與時刻]，並打亂時間
+![螢幕擷取畫面 2022-06-08 010043](https://user-images.githubusercontent.com/106873001/172440625-6d60276a-4e17-4941-ae0c-ddb4c1c3ea23.png)
+
+* 連接server端時間
+
+```shell
+sudo ntpdate [server IP]
+```
+此為連接成功，且時間也從3點調成台灣時間
+
+![螢幕擷取畫面 2022-06-08 012800](https://user-images.githubusercontent.com/106873001/172445958-a0d2a011-0228-4328-99a9-138edf978f9a.png)
+
 
 
 ## 實作二 : 設定其他時區
