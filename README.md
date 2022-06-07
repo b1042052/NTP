@@ -70,7 +70,8 @@ ifconfig
  sudo nano /etc/ntp.conf
  ```
  - pool組態前面用[#]註解掉，並加上中華電信提供的台灣標準時間的網址，網址五擇一即可 (https://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt)
- server 網址 iburst
+   
+   server 網址 iburst
  
  ![image](https://user-images.githubusercontent.com/106873001/172410136-0d8a56a6-7666-4179-aa77-2f0f73141df1.png)
 
@@ -120,6 +121,7 @@ sudo ntpdate [server IP]
 ```
 此為連接成功，且時間也從被調亂變回正常時間
 ![螢幕擷取畫面 2022-06-08 012800](https://user-images.githubusercontent.com/106873001/172445958-a0d2a011-0228-4328-99a9-138edf978f9a.png)
+
 畫線處為已成功與server端同步，並顯示server端的IP
 
 
@@ -139,9 +141,11 @@ timedatectl list-timezones
 sudo timedatectl set-timezone [你選擇的時區]
 ```
 時間已成功更改成當地時區
+
 ![image](https://user-images.githubusercontent.com/106873001/172450395-1cd8eb23-d72a-46de-a41f-5c7f218e07b1.png)
 
 接下來只要讓剛才client端連接，client端也會與server端同步時間
+
 ```shell
 sudo ntpdate [server IP]
 ```
