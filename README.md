@@ -81,7 +81,7 @@ ifconfig
 sudo service ntp restart    
 ```
 
-* 確認是否連連接成功
+* 確認是否連接成功
 ```shell
 sudo ntpd -pn
 ```
