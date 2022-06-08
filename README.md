@@ -81,7 +81,7 @@ ifconfig
 sudo service ntp restart    
 ```
 
-* 確認是否連接成功
+* 確認是否連接成功(這個有時候會出現，有時候不會)
 ```shell
 sudo ntpd -pn
 ```
@@ -114,7 +114,7 @@ sudo apt-get install ntpdate
   - 選擇[日期與時刻]，並打亂時間
 ![螢幕擷取畫面 2022-06-08 010043](https://user-images.githubusercontent.com/106873001/172440625-6d60276a-4e17-4941-ae0c-ddb4c1c3ea23.png)
 
-* 連接server端時間(此時的server IP 有時候會跑掉，稍待幾分鐘後再去確認)
+* 連接server端時間(此時的server IP 有時候會跑掉，可以稍待幾分鐘後再去確認)
 
 ```shell
 sudo ntpdate [server IP]
@@ -149,3 +149,5 @@ sudo timedatectl set-timezone [你選擇的時區]
 ```shell
 sudo ntpdate [server IP]
 ```
+
+影片:https://niuo365.sharepoint.com/:v:/r/sites/ubuntu/Shared%20Documents/General/Recordings/General-20220609_004308-%E6%9C%83%E8%AD%B0%E9%8C%84%E8%A3%BD.mp4?csf=1&web=1&e=5bclIs
