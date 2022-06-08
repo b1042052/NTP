@@ -114,7 +114,7 @@ sudo apt-get install ntpdate
   - 選擇[日期與時刻]，並打亂時間
 ![螢幕擷取畫面 2022-06-08 010043](https://user-images.githubusercontent.com/106873001/172440625-6d60276a-4e17-4941-ae0c-ddb4c1c3ea23.png)
 
-* 連接server端時間
+* 連接server端時間(此時的server IP 有時候會跑掉，稍待幾分鐘後再去確認)
 
 ```shell
 sudo ntpdate [server IP]
