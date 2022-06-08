@@ -69,7 +69,7 @@ ifconfig
  ```shell
  sudo nano /etc/ntp.conf
  ```
- - pool組態前面用[#]註解掉，並加上中華電信提供的台灣標準時間的網址，網址五擇一即可 (https://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt)
+ - pool組態前面用[#]註解掉，並加上中華電信研究所提供的台灣標準時間的網址，網址五擇一即可 (https://www.stdtime.gov.tw/chinese/bulletin/NTP%20promo.txt)
    
    server 網址 iburst
  
