@@ -81,9 +81,9 @@ ifconfig
 sudo service ntp restart    
 ```
 
-* 確認是否連接成功(這個有時候會出現，有時候不會)
+* 確認是否連接成功
 ```shell
-sudo ntpd -pn
+sudo ntpq -pn
 ```
 
  [ * ]代表正在使用
